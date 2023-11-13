@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { VcardService } from './vcard.service';
 
-@Module({})
+@Module({
+  providers: [VcardService]
+})
 export class VcardModule {}
