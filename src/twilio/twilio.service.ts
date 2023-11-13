@@ -14,7 +14,7 @@ export class TwilioService {
     this.client = twilio(TWILIO_TEST_ACCOUNT_SID, TWILIO_TEST_AUTH_TOKEN);
   }
 
-  async sendSMS(to: string, body: string): Promise<string> {
+  async sendSMS(to: string, body: string) {
     try {
       const message = await this.client.messages.create({
         body,
@@ -22,10 +22,11 @@ export class TwilioService {
         to,
       });
 
-      return message.sid;
+      //   return message.sid;
+      return message;
     } catch (error) {
-      console.error(error);
-      throw new Error('Failed to send SMS');
+      console.error(error.message);
+      return;
     }
   }
 }

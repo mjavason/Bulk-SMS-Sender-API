@@ -17,6 +17,7 @@ export const TWILIO_PHONE_NUMBER =
 // general app configs
 export const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
 export const PORT = process.env.PORT || 3000;
+export const APP_NAME = 'Bulk SMS Sender API';
 
 export const MESSAGES = {
   ACCESS_TOKEN_ERROR_RESPONSE: 'Access token is invalid. Please log in again',
