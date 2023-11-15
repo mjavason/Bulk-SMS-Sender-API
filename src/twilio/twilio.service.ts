@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
+  TWILIO_ACCOUNT_SID,
+  TWILIO_AUTH_TOKEN,
   TWILIO_PHONE_NUMBER,
   TWILIO_TEST_ACCOUNT_SID,
   TWILIO_TEST_AUTH_TOKEN,
@@ -11,7 +13,7 @@ export class TwilioService {
   private readonly client: twilio.Twilio;
 
   constructor() {
-    this.client = twilio(TWILIO_TEST_ACCOUNT_SID, TWILIO_TEST_AUTH_TOKEN);
+    this.client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
   }
 
   async sendSMS(to: string, body: string) {

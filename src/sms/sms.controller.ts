@@ -38,7 +38,7 @@ export class SmsController {
     const message = await this.twilioService.sendSMS(to, body);
 
     if (!message)
-      throw new InternalServerErrorException('Something weird happened');
+      throw new InternalServerErrorException('Unable to send sms');
 
     return SuccessResponse(message);
   }
